@@ -1,5 +1,5 @@
 # PROYECTO-MID-TERM
- Proyecto HTML, CSS y JS bootcamp IronHack Front End Web Developer
+
 
 ## Table of Contents
 - [Description](#description)
@@ -13,7 +13,7 @@
 
 Creation and deployment of a web page from scratch. Through a provided Figma file, I had to create the webpage, including its skeleton and styles, as well as making it functional.
 
-This is a learning project for the Front End Web Developer bootcamp.
+This is a learning project for the Front End Web Developer bootcamp in IronHack.
 
 ## Technologies Used
 
