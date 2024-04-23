@@ -107,6 +107,11 @@ body .client-section a {
 }
 body .client-section a img {
   filter: grayscale(100%);
+  transition: filter 0.5s, transform 0.5s;
+}
+body .client-section a :hover {
+  filter: grayscale(0%);
+  transform: scale(1.5);
 }
 body .recent-projects {
   margin-bottom: 200px;
@@ -604,7 +609,7 @@ footer,
     cursor: pointer;
     font-size: 30px;
     padding-right: 30px;
-    color: var(--title-color);
+    color: var(--button-color);
   }
   body header .menu-toggle:checked ~ .nav-bar ul {
     display: flex;

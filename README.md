@@ -76,12 +76,11 @@ In this section, I share my daily progress on the project, including the feature
 ### Day 3: [23-04-2024]
 
 **Progress:**
-
-- 
-
+- Making the page responsive.
+- Starting with JavaScript.
 
 **Challenges encountered:**
-- 
+- I've created too many 'breakpoints', which has consumed a lot of my time. I've encountered problems especially with the 'burger menu'.
 
 **Solutions:**
-- 
+- Researching and testing many styles for the dropdown menu until I found one that I liked and was able to implement.
