@@ -72,3 +72,16 @@ In this section, I share my daily progress on the project, including the feature
 - Applied a static size to the container and a percentage size to the images, in addition to setting their position to 'relative'.
 - Placed both form fields in a container and made it flex, with a justify-content:space-between, and set the container's styles to flex:1 (so that both the email and phone occupy proportional space within the container).
 - Read documentation and practiced with 'absolute' and 'relative' positions in different containers. Eventually, I set the position to 'relative' for the overall container to act as a reference frame for the emoji container, to which I gave a position at the top and left, and sizes of 100% so they occupy all the space within their parent. In turn, I also gave 'absolute' position to the emojis so that they are positioned in a specific location within the container.
+
+### Day 3: [23-04-2024]
+
+**Progress:**
+
+- 
+
+
+**Challenges encountered:**
+- 
+
+**Solutions:**
+- 

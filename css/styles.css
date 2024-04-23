@@ -20,6 +20,12 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+header .menu-toggle {
+  display: none;
+}
+header .burger-icon {
+  display: none;
+}
 header .nav-bar ul {
   display: flex;
   justify-content: space-evenly;
@@ -109,6 +115,8 @@ body .recent-projects .card-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 body .recent-projects .card-container .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -224,6 +232,8 @@ body .services-section .card-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 body .services-section .card-container .card {
   width: 340px;
@@ -274,7 +284,14 @@ body .cta-section .cta-container p {
   font-size: 20px;
   margin-bottom: 50px;
 }
-body .cta-section .cta-container #email {
+body .cta-section .cta-container form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+body .cta-section .cta-container form #email {
   width: 393px;
   height: 80px;
   padding-left: 70px;
@@ -282,10 +299,9 @@ body .cta-section .cta-container #email {
   background-image: url(/project-assets/newsletter/icon/mail.svg);
   background-repeat: no-repeat;
   background-position: 20px;
-  margin-right: 20px;
   border: none;
 }
-body .cta-section .cta-container button {
+body .cta-section .cta-container form button {
   width: 198px;
   height: 80px;
 }
@@ -324,6 +340,7 @@ h3 {
   font-size: 40px;
   font-weight: bold;
   margin-bottom: 70px;
+  text-align: center;
 }
 
 h4 {
@@ -355,8 +372,7 @@ footer .grid {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 60px 106px;
-  grid-auto-flow: row;
-  grid-template-areas: "Team Service About-Us" "Press Projects Privacy-Politics";
+  grid-template-areas: "Team Service About-Us" "Press Projects Privacy-Policy";
 }
 footer .grid a {
   font-size: 17px;
@@ -458,4 +474,175 @@ footer,
   color: var(--text-color);
   font-size: 20px;
   line-height: 150%;
+}
+
+/* Responsive style */
+@media (max-width: 1420px) {
+  body .hero-section .img-box .img-container .img-2 {
+    left: 0;
+  }
+  body .recent-projects,
+  body .services-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0;
+  }
+  body .recent-projects .card-container,
+  body .services-section .card-container {
+    justify-content: center;
+  }
+}
+@media (max-width: 992px) {
+  header,
+  .hero-section,
+  .client-section,
+  footer,
+  .recent-projects,
+  .services-section,
+  .form-section,
+  .project-section {
+    margin: 0 60px;
+  }
+  body .hero-section {
+    flex-direction: column;
+    height: 850px;
+  }
+  body .hero-section .text-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  body .hero-section .img-box {
+    width: 50%;
+  }
+  body .hero-section .img-box .img-container {
+    width: 100%;
+    height: auto;
+    background-position: top;
+  }
+  body .hero-section .img-box .img-container img {
+    width: 80%;
+  }
+  body .hero-section .img-box .img-container .img-1 {
+    right: 30%;
+  }
+  body .hero-section .img-box .img-container .img-2 {
+    bottom: 100px;
+    left: 200px;
+  }
+  body .client-section {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  body .testimonial-section {
+    margin-bottom: 70px;
+  }
+  body .testimonial-section .test-container {
+    padding: 120px;
+    text-align: center;
+  }
+  body .testimonial-section .memoji-container .corner-img {
+    margin: 0;
+  }
+  body .cta-section {
+    margin-bottom: 70px;
+  }
+  body .footer .grid {
+    gap: 30px 30px;
+  }
+  body .project-section {
+    margin-top: 40px;
+  }
+  body .project-section .text-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  body .project-section .text-flex .description {
+    margin-bottom: 12px;
+  }
+}
+@media (max-width: 768px) {
+  header,
+  .hero-section,
+  .client-section,
+  footer,
+  .recent-projects,
+  .services-section,
+  .form-section,
+  .project-section {
+    margin: 0 30px;
+  }
+  body .client-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 0;
+    gap: 20px;
+    height: 100%;
+  }
+  body .project-section {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 576px) {
+  header,
+  .hero-section,
+  .client-section,
+  footer,
+  .recent-projects,
+  .services-section,
+  .form-section,
+  .project-section {
+    margin: 0 60px;
+  }
+  body header {
+    position: relative;
+  }
+  body header .burger-icon {
+    display: block;
+    cursor: pointer;
+    font-size: 30px;
+    padding-right: 30px;
+    color: var(--title-color);
+  }
+  body header .menu-toggle:checked ~ .nav-bar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  body header .nav-bar ul {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    padding: 10px;
+  }
+  body header .nav-bar ul li {
+    display: inline-block;
+  }
+  body .hero-section {
+    height: 50%;
+  }
+  body .hero-section .img-box {
+    display: none;
+  }
+  body .client-section {
+    margin-bottom: 30px;
+  }
+  body .recent-projects h3,
+  body .services-section h3 {
+    margin-bottom: 30px;
+  }
+  body .footer .grid {
+    align-items: center;
+    text-align: center;
+    gap: 20px 20px;
+    padding: 20px;
+  }
+  body .form-section .form-container .flex-form {
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=styles.css.map */

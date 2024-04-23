@@ -18,6 +18,12 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  .menu-toggle {
+    display: none;
+  }
+  .burger-icon {
+    display: none;
+  }
 
   .nav-bar {
     ul {
@@ -30,7 +36,6 @@ header {
       a {
         color: var(--text-color);
       }
-
       .home {
         color: var(--button-color);
       }
@@ -110,6 +115,8 @@ body {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
       .card {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         width: 340px;
@@ -175,7 +182,7 @@ body {
       padding: 120px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;;
+      justify-content: space-between;
       align-items: center;
       height: 100%;
       h3 {
@@ -224,6 +231,8 @@ body {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
       .card {
         width: 340px;
         height: 380px;
@@ -266,7 +275,6 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-
     .cta-container {
       h3 {
         color: var(--title-color);
@@ -279,20 +287,26 @@ body {
         font-size: 20px;
         margin-bottom: 50px;
       }
-      #email {
-        width: 393px;
-        height: 80px;
-        padding-left: 70px;
-        font-size: 17px;
-        background-image: url(/project-assets/newsletter/icon/mail.svg);
-        background-repeat: no-repeat;
-        background-position: 20px;
-        margin-right: 20px;
-        border: none;
-      }
-      button {
-        width: 198px;
-        height: 80px;
+      form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        #email {
+          width: 393px;
+          height: 80px;
+          padding-left: 70px;
+          font-size: 17px;
+          background-image: url(/project-assets/newsletter/icon/mail.svg);
+          background-repeat: no-repeat;
+          background-position: 20px;
+          border: none;
+        }
+        button {
+          width: 198px;
+          height: 80px;
+        }
       }
     }
   }
@@ -330,6 +344,7 @@ h3 {
   font-size: 40px;
   font-weight: bold;
   margin-bottom: 70px;
+  text-align: center;
 }
 h4 {
   color: var(--title-color);
@@ -358,10 +373,9 @@ footer {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 60px 106px;
-    grid-auto-flow: row;
     grid-template-areas:
       "Team Service About-Us"
-      "Press Projects Privacy-Politics";
+      "Press Projects Privacy-Policy";
     a {
       font-size: 17px;
     }
@@ -464,5 +478,212 @@ footer,
     color: var(--text-color);
     font-size: 20px;
     line-height: 150%;
+  }
+}
+
+/* Responsive style */
+
+@media (max-width: 1420px) {
+  //I did this just for the cards
+  body {
+    .hero-section {
+      .img-box {
+        .img-container {
+          .img-2 {
+            left: 0;
+          }
+        }
+      }
+    }
+    .recent-projects,
+    .services-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 0;
+      .card-container {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  header,
+  .hero-section,
+  .client-section,
+  footer,
+  .recent-projects,
+  .services-section,
+  .form-section,
+  .project-section {
+    margin: 0 60px;
+  }
+
+  body {
+    .hero-section {
+      flex-direction: column;
+      height: 850px;
+      .text-container {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .img-box {
+        width: 50%;
+        .img-container {
+          width: 100%; // Hacemos que el contenedor de imágenes ocupe el 100% del ancho disponible
+          height: auto; // Hacemos que la altura de las imágenes se ajuste automáticamente
+          background-position: top;
+          img {
+            width: 80%; // Reducimos el tamaño de las imágenes al 80% del contenedor
+          }
+          .img-1 {
+            right: 30%;
+          }
+          .img-2 {
+            bottom: 100px;
+            left: 200px;
+          }
+        }
+      }
+    }
+    .client-section {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .testimonial-section {
+      margin-bottom: 70px;
+      .test-container {
+        padding: 120px; // Añadimos espacio de relleno al contenedor de testimonios
+        text-align: center;
+      }
+      .memoji-container {
+        .corner-img {
+          margin: 0;
+        }
+      }
+    }
+    .cta-section {
+      margin-bottom: 70px;
+    }
+    .footer {
+      .grid {
+        gap: 30px 30px;
+      }
+    }
+    .project-section {
+      margin-top: 40px;
+      .text-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        .description {
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  // Estilos para pantallas con ancho máximo de 768px
+  header,
+  .hero-section,
+  .client-section,
+  footer,
+  .recent-projects,
+  .services-section,
+  .form-section,
+  .project-section {
+    margin: 0 30px;
+  }
+  body {
+    .client-section {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-top: 0;
+      gap: 20px;
+      height: 100%;
+    }
+    .project-section {
+      margin-top: 40px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  // Estilos para pantallas con ancho máximo de 576px
+  header,
+  .hero-section,
+  .client-section,
+  footer,
+  .recent-projects,
+  .services-section,
+  .form-section,
+  .project-section {
+    margin: 0 60px;
+  }
+  body {
+    header {
+      position: relative;
+      .burger-icon {
+        display: block;
+        cursor: pointer;
+        font-size: 30px;
+        padding-right: 30px;
+        color: var(--title-color);
+      }
+      .menu-toggle:checked ~ .nav-bar ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+      .nav-bar {
+        ul {
+          display: none;
+          width: 100%;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          z-index: 1000;
+          padding: 10px;
+          li {
+            display: inline-block;
+          }
+        }
+      }
+    }
+
+    .hero-section {
+      height: 50%;
+      .img-box {
+        display: none;
+      }
+    }
+    .client-section {
+      margin-bottom: 30px;
+    }
+    .recent-projects,
+    .services-section {
+      h3 {
+        margin-bottom: 30px;
+      }
+    }
+    .footer {
+      .grid {
+        align-items: center;
+        text-align: center;
+        gap: 20px 20px;
+        padding: 20px;
+      }
+    }
+    .form-section {
+      .form-container {
+        .flex-form {
+          flex-direction: column;
+        }
+      }
+    }
   }
 }
