@@ -84,3 +84,22 @@ In this section, I share my daily progress on the project, including the feature
 
 **Solutions:**
 - Researching and testing many styles for the dropdown menu until I found one that I liked and was able to implement.
+
+### Day 4: [24-04-2024]
+
+**Progress:**
+- Finish the JavaScript.
+- Meeting with the teacher to suggest improvements:
+    - Fix 'responsive' and leave only 3 sizes.
+    - Change the way to do the fetch with an Async function.
+    - Try to make at least one "utility function".
+    - Extract 'header', 'cta-section', and 'footer' as modules and import them into the pages with JavaScript.
+    - Try to make the nav-bar links change color depending on which page of the website you are on.
+
+**Challenges encountered:**
+- Not knowing what modules are or how they are implemented.
+- Having the nav-bar links change color using only HTML and CSS.
+
+**Solutions:**
+- Look up information about modules and the function for them to work with JS.
+- Search for options to implement the change of colors of the links without using JS, but it seems not possible, therefore I will research how to do it with JavaScript.
