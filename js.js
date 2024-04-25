@@ -52,21 +52,18 @@ async function getProjects() {
 
     let projectUuid1;
 
-    
     data.forEach((project) => {
       if (project.uuid === "1") {
-        projectUuid1 = project; 
+        projectUuid1 = project;
       }
     });
 
     if (projectUuid1) {
-    
       document.getElementById("project-name").innerText = projectUuid1.name;
-      document.getElementById("project-descrition").innerText =
+      document.getElementById("project-description").innerText =
         projectUuid1.description;
-      document.getElementById(
-        "project-date"
-      ).innerText = projectUuid1.completed_on;
+      document.getElementById("project-date").innerText =
+        projectUuid1.completed_on;
       document.getElementById("project-img").src = projectUuid1.image;
       document.getElementById("project-content").innerHTML =
         projectUuid1.content;
@@ -82,15 +79,28 @@ async function getProjects() {
       card.querySelector("h4").innerText = project.name;
       card.querySelector("p").innerText = project.description;
 
-      if (project.link) {
-        card.querySelector(".learn-more").setAttribute("href", project.link);
-      }
+      card
+        .querySelector(".learn-more")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          showProjectInfo(project);
+          window.scroll(0, 0);
+        });
     });
   } catch (error) {
     console.log(
       "Vaya, algo estás haciendo mal, ¡prueba otra vez! " + error.message
     );
   }
+}
+
+function showProjectInfo(project) {
+  document.getElementById("project-name").innerText = project.name;
+  document.getElementById("project-description").innerText =
+    project.description;
+  document.getElementById("project-date").innerText = project.completed_on;
+  document.getElementById("project-img").src = project.image;
+  document.getElementById("project-content").innerHTML = project.content;
 }
 
 window.onload = function () {
@@ -121,3 +131,6 @@ form.addEventListener("submit", function (event) {
     return;
   }
 });
+
+
+/* Links cambio de color */

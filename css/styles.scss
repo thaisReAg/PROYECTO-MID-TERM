@@ -34,14 +34,12 @@ header {
       gap: 60px;
       font-weight: medium;
       li {
-        a{
+        a {
           color: var(--text-color);
-          
         }
         .active {
           color: var(--button-color);
         }
-        
       }
     }
   }
@@ -320,6 +318,25 @@ body {
       }
     }
   }
+  .fixed-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--button-color);
+    color: var(--yellow-color);
+    border-radius: 50%;
+    font-size: 28px;
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+    z-index: 1000;
+    &:hover {
+      background-color: var(--yellow-color);
+      color: var(--button-color);
+    }
+  }
 }
 
 h1 {
@@ -347,6 +364,7 @@ button {
 }
 a {
   text-decoration: none;
+  color: var(--text-color);
 }
 h3 {
   color: var(--title-color);
@@ -560,6 +578,9 @@ footer,
     .testimonial-section {
       display: none;
     }
+  }
+  .project-section{
+    margin-bottom: 50px;
   }
 }
 
