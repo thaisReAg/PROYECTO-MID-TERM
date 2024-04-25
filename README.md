@@ -24,7 +24,7 @@ This is a learning project for the Front End Web Developer bootcamp in IronHack.
 
 ## Usage
 
-To see this project in action, visit (URL of the website deployed on Netlify).
+To see this project in action, visit [(URL of the website deployed on Netlify)](https://circle-thais-midterm.netlify.app/).
 
 ## Features
 
@@ -34,6 +34,7 @@ To see this project in action, visit (URL of the website deployed on Netlify).
 
 - **Dynamic JavaScript Interactions**: We use JavaScript to add interactivity to the site, enhancing the user experience.
     - *Dynamic Project Loading*: On the project page, JavaScript is used to dynamically load the details of each project from an API, offering an updated view of recent work.
+    - *Form validation*: Form validation through JavaScript.
 
 ## Development Diary
 
@@ -103,3 +104,20 @@ In this section, I share my daily progress on the project, including the feature
 **Solutions:**
 - Look up information about modules and the function for them to work with JS.
 - Search for options to implement the change of colors of the links without using JS, but it seems not possible, therefore I will research how to do it with JavaScript.
+
+### Day 5: [25-04-2024]
+
+**Progress:**
+- When we click on the 'cards' of other projects, the information of the main project changes to that of the selected project.
+- The links in the nav-bar change color depending on which page you're on.
+- Add transitions and effects to the cards.
+- Validate all form inputs to ensure they're not empty and that the phone input contains only numbers.
+- Prepare the presentation.
+
+**Challenges encountered:**
+- Making the nav-bar links change color.
+- Validating the inputs.
+
+**Solutions:**
+- Asked for help, and through the 'insertHTML' function, I managed to change the color of the links, and by calling that function from the header module, we got it to work.
+- Used the creation of a <span> and the JavaScript property 'nextElementSibling' for validation.

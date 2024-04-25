@@ -36,9 +36,7 @@ header {
       li {
         a {
           color: var(--text-color);
-          
         }
-        
       }
     }
     .link-activated {
@@ -47,7 +45,7 @@ header {
     }
   }
 }
-/* Homepage */
+/* ------ HOMEPAGE ------ */
 body {
   margin: 70px 0;
   background-color: #f2f4fc;
@@ -132,15 +130,16 @@ body {
         width: 340px;
         height: 444px;
         background-color: white;
-        transition: 0.5s;
+        transition: 400ms;
+        cursor: pointer;
         &:hover {
-          transform: translateY(-30px);
-          cursor: pointer;
+          transform: scale(1.2, 1.2);
         }
         img {
           height: 240px;
           width: 100%;
         }
+       
         .text-container {
           padding: 30px;
           h4 {
@@ -151,6 +150,14 @@ body {
             color: var(--text-color);
             margin-bottom: 54px;
             line-height: 150%;
+          }
+        }
+      }
+      &:hover {
+        >.card {
+          &:not(:hover) {
+            filter: blur(10px);
+            transform: scale(0.9, 0.9);
           }
         }
       }
@@ -254,9 +261,10 @@ body {
         background-color: white;
         padding: 30px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        transition: 0.5s;
+        transition: 400ms;
+        cursor: pointer;
         &:hover {
-          transform: translateY(-30px);
+          transform: scale(1.2, 1.2);
         }
 
         .logo-container {
@@ -281,6 +289,14 @@ body {
             color: var(--text-color);
             font-size: 17px;
             line-height: 150%;
+          }
+        }
+      }
+      &:hover {
+        >.card {
+          &:not(:hover) {
+            filter: blur(10px);
+            transform: scale(0.9, 0.9);
           }
         }
       }
@@ -338,15 +354,19 @@ body {
     height: 50px;
     background-color: var(--button-color);
     color: var(--yellow-color);
+    box-shadow: 0 20px 30px -6px var(--title-color);
     border-radius: 50%;
     font-size: 28px;
     text-align: center;
     line-height: 50px;
     text-decoration: none;
     z-index: 1000;
+    transition: all 0.3s ease-in-out;
     &:hover {
       background-color: var(--yellow-color);
       color: var(--button-color);
+      transform: translateY(3px);
+      box-shadow: none;
     }
   }
 }
@@ -429,7 +449,7 @@ footer,
   margin: 0 170px;
 }
 
-/* Contact us */
+/* ------ CONTACT US ----- */
 .form-section {
   margin-top: 100px;
   margin-bottom: 140px;
@@ -475,7 +495,7 @@ footer,
   }
 }
 
-/* PROJECT PAGE */
+/* ----- PROJECT PAGE ----- */
 .project-section {
   margin-top: 100px;
   margin-bottom: 70px;
@@ -518,7 +538,7 @@ footer,
   }
 }
 
-/* Responsive style */
+/* ----- RESPONSIVE ------ */
 
 @media (max-width: 1440px) {
   //I did this just for the cards
@@ -550,6 +570,13 @@ footer,
         }
       }
     }
+    .client-section {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-top: 0;
+      gap: 20px;
+    }
     .recent-projects,
     .services-section {
       display: flex;
@@ -579,19 +606,24 @@ footer,
     .hero-section {
       height: 750px;
     }
-    .client-section {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      margin-top: 0;
-      gap: 20px;
-    }
+
     .testimonial-section {
       display: none;
     }
+    .recent-projects,
+    .services-section {
+      .card-container {
+        .card {
+          transition: none;
+          &:hover {
+            transform: none;
+          }
+        }
+      }
+    }
   }
   .project-section {
-    margin-bottom: 50px;
+    margin: 70px 30px;
   }
 }
 
@@ -603,8 +635,7 @@ footer,
   footer,
   .recent-projects,
   .services-section,
-  .form-section,
-  .project-section {
+  .form-section {
     margin: 0 60px;
   }
   body {
@@ -654,6 +685,13 @@ footer,
     .services-section {
       h3 {
         margin-bottom: 30px;
+      }
+      .card {
+        transition: none;
+        &:hover {
+          transform: none;
+          cursor: pointer;
+        }
       }
     }
     .cta-section {

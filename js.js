@@ -45,9 +45,7 @@
 
 async function getProjects() {
   try {
-    const response = await fetch(
-      "https://raw.githubusercontent.com/ironhack-jc/mid-term-api/main/projects"
-    );
+    const response = await fetch("https://raw.githubusercontent.com/ironhack-jc/mid-term-api/main/projects");
     const data = await response.json();
 
     let projectUuid1;
@@ -60,13 +58,10 @@ async function getProjects() {
 
     if (projectUuid1) {
       document.getElementById("project-name").innerText = projectUuid1.name;
-      document.getElementById("project-description").innerText =
-        projectUuid1.description;
-      document.getElementById("project-date").innerText =
-        projectUuid1.completed_on;
+      document.getElementById("project-description").innerText = projectUuid1.description;
+      document.getElementById("project-date").innerText = projectUuid1.completed_on;
       document.getElementById("project-img").src = projectUuid1.image;
-      document.getElementById("project-content").innerHTML =
-        projectUuid1.content;
+      document.getElementById("project-content").innerHTML = projectUuid1.content;
     }
 
     const otherProjects = data.filter((project) => project.uuid !== "1");
@@ -79,22 +74,19 @@ async function getProjects() {
       card.querySelector("h4").innerText = project.name;
       card.querySelector("p").innerText = project.description;
 
-      card.addEventListener("click", function() {
+      card.addEventListener("click", function () {
         showProjectInfo(project); // Mostrar la información del proyecto al hacer clic en la tarjeta
         window.scroll(0, 0); // Hacer que la página vuelva al principio
-        });
+      });
     });
   } catch (error) {
-    console.log(
-      "Vaya, algo estás haciendo mal, ¡prueba otra vez! " + error.message
-    );
+    console.log("Vaya, algo estás haciendo mal, ¡prueba otra vez! " + error.message);
   }
 }
 
 function showProjectInfo(project) {
   document.getElementById("project-name").innerText = project.name;
-  document.getElementById("project-description").innerText =
-    project.description;
+  document.getElementById("project-description").innerText = project.description;
   document.getElementById("project-date").innerText = project.completed_on;
   document.getElementById("project-img").src = project.image;
   document.getElementById("project-content").innerHTML = project.content;
@@ -115,19 +107,3 @@ window.onload = function () {
 
         Para evitar este tipo de problemas, debemos inyectar todo el HTML a la vez, de una.
         */
-
-/* Form validation */
-
-// const form = document.querySelector(".contact-form");
-// const fullName = document.getElementById("FullName");
-
-// form.addEventListener("submit", function (event) {
-//   if (fullName.value.toLowerCase() === "ironhack") {
-//     event.preventDefault();
-//     alert("You cannot be Ironhack, because I am Ironhack.");
-//     return;
-//   }
-// });
-
-
-/* Links cambio de color */

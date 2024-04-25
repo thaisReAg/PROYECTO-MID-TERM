@@ -3,6 +3,7 @@ function loadHeader() {
     .then((response) => response.text())
     .then((html) => {
       document.getElementById("header-placeholder").innerHTML = html;
+      insertHTML();
     });
 }
 
@@ -21,20 +22,20 @@ function loadCta() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  loadHeader();
-  loadFooter();
-  loadCta();
+function insertHTML() {
+  let urlActual = window.location.href;
 
-  setTimeout(() => {
-    let urlActual = window.location.href;
+  if (urlActual.includes("index")) {
+    document.querySelector("#home").classList.add("link-activated");
+    console.log("index");
+  }
 
-    if (urlActual.includes("/")) {
-      document.querySelector(".nav-bar ul li a").classList.add("link-activated");
-    }
+  if (urlActual.includes("project-page")) {
+    document.querySelector("#project").classList.add("link-activated");
+    console.log("project page");
+  }
+}
 
-    if (urlActual.includes("/project-page")) {
-      document.querySelector(".nav-bar ul li a").classList.add("link-activated");
-    }
-  }, 100);
-});
+loadHeader();
+loadFooter();
+loadCta();

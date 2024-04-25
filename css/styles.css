@@ -42,7 +42,7 @@ header .nav-bar .link-activated {
   font-weight: bold;
 }
 
-/* Homepage */
+/* ------ HOMEPAGE ------ */
 body {
   margin: 70px 0;
   background-color: #f2f4fc;
@@ -129,11 +129,11 @@ body .recent-projects .card-container .card {
   width: 340px;
   height: 444px;
   background-color: white;
-  transition: 0.5s;
+  transition: 400ms;
+  cursor: pointer;
 }
 body .recent-projects .card-container .card:hover {
-  transform: translateY(-30px);
-  cursor: pointer;
+  transform: scale(1.2, 1.2);
 }
 body .recent-projects .card-container .card img {
   height: 240px;
@@ -150,6 +150,10 @@ body .recent-projects .card-container .card .text-container p {
   color: var(--text-color);
   margin-bottom: 54px;
   line-height: 150%;
+}
+body .recent-projects .card-container:hover > .card:not(:hover) {
+  filter: blur(10px);
+  transform: scale(0.9, 0.9);
 }
 body .testimonial-section {
   background-color: var(--title-color);
@@ -252,10 +256,11 @@ body .services-section .card-container .card {
   background-color: white;
   padding: 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.5s;
+  transition: 400ms;
+  cursor: pointer;
 }
 body .services-section .card-container .card:hover {
-  transform: translateY(-30px);
+  transform: scale(1.2, 1.2);
 }
 body .services-section .card-container .card .logo-container {
   background-color: #ecf7ff;
@@ -278,6 +283,10 @@ body .services-section .card-container .card .text-container p {
   color: var(--text-color);
   font-size: 17px;
   line-height: 150%;
+}
+body .services-section .card-container:hover > .card:not(:hover) {
+  filter: blur(10px);
+  transform: scale(0.9, 0.9);
 }
 body .cta-section {
   height: 500px;
@@ -329,16 +338,20 @@ body .fixed-btn {
   height: 50px;
   background-color: var(--button-color);
   color: var(--yellow-color);
+  box-shadow: 0 20px 30px -6px var(--title-color);
   border-radius: 50%;
   font-size: 28px;
   text-align: center;
   line-height: 50px;
   text-decoration: none;
   z-index: 1000;
+  transition: all 0.3s ease-in-out;
 }
 body .fixed-btn:hover {
   background-color: var(--yellow-color);
   color: var(--button-color);
+  transform: translateY(3px);
+  box-shadow: none;
 }
 
 h1 {
@@ -422,7 +435,7 @@ footer,
   margin: 0 170px;
 }
 
-/* Contact us */
+/* ------ CONTACT US ----- */
 .form-section {
   margin-top: 100px;
   margin-bottom: 140px;
@@ -465,7 +478,7 @@ footer,
   outline: 2px solid rgba(107, 112, 141, 0.5);
 }
 
-/* PROJECT PAGE */
+/* ----- PROJECT PAGE ----- */
 .project-section {
   margin-top: 100px;
   margin-bottom: 70px;
@@ -509,7 +522,7 @@ footer,
   line-height: 150%;
 }
 
-/* Responsive style */
+/* ----- RESPONSIVE ------ */
 @media (max-width: 1440px) {
   body .hero-section {
     flex-direction: column;
@@ -538,6 +551,13 @@ footer,
     bottom: 100px;
     left: 200px;
   }
+  body .client-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 0;
+    gap: 20px;
+  }
   body .recent-projects,
   body .services-section {
     display: flex;
@@ -564,18 +584,19 @@ footer,
   body .hero-section {
     height: 750px;
   }
-  body .client-section {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: 0;
-    gap: 20px;
-  }
   body .testimonial-section {
     display: none;
   }
+  body .recent-projects .card-container .card,
+  body .services-section .card-container .card {
+    transition: none;
+  }
+  body .recent-projects .card-container .card:hover,
+  body .services-section .card-container .card:hover {
+    transform: none;
+  }
   .project-section {
-    margin-bottom: 50px;
+    margin: 70px 30px;
   }
 }
 @media (max-width: 550px) {
@@ -585,8 +606,7 @@ footer,
   footer,
   .recent-projects,
   .services-section,
-  .form-section,
-  .project-section {
+  .form-section {
     margin: 0 60px;
   }
   body header {
@@ -631,6 +651,15 @@ footer,
   body .recent-projects h3,
   body .services-section h3 {
     margin-bottom: 30px;
+  }
+  body .recent-projects .card,
+  body .services-section .card {
+    transition: none;
+  }
+  body .recent-projects .card:hover,
+  body .services-section .card:hover {
+    transform: none;
+    cursor: pointer;
   }
   body .cta-section .cta-container form {
     flex-wrap: wrap;
