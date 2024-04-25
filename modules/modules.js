@@ -29,11 +29,11 @@ document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => {
     let urlActual = window.location.href;
 
-    if (urlActual.includes("index")) {
+    if (urlActual.includes("/")) {
       document.querySelector(".nav-bar ul li a").classList.add("link-activated");
     }
 
-    if (urlActual.includes("project-page")) {
+    if (urlActual.includes("/project-page")) {
       document.querySelector(".nav-bar ul li a").classList.add("link-activated");
     }
   }, 100);
