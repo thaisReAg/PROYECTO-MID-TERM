@@ -79,12 +79,9 @@ async function getProjects() {
       card.querySelector("h4").innerText = project.name;
       card.querySelector("p").innerText = project.description;
 
-      card
-        .querySelector(".learn-more")
-        .addEventListener("click", function (event) {
-          event.preventDefault();
-          showProjectInfo(project);
-          window.scroll(0, 0);
+      card.addEventListener("click", function() {
+        showProjectInfo(project); // Mostrar la información del proyecto al hacer clic en la tarjeta
+        window.scroll(0, 0); // Hacer que la página vuelva al principio
         });
     });
   } catch (error) {
@@ -121,16 +118,16 @@ window.onload = function () {
 
 /* Form validation */
 
-const form = document.querySelector(".contact-form");
-const fullName = document.getElementById("FullName");
+// const form = document.querySelector(".contact-form");
+// const fullName = document.getElementById("FullName");
 
-form.addEventListener("submit", function (event) {
-  if (fullName.value.toLowerCase() === "ironhack") {
-    event.preventDefault();
-    alert("You cannot be Ironhack, because I am Ironhack.");
-    return;
-  }
-});
+// form.addEventListener("submit", function (event) {
+//   if (fullName.value.toLowerCase() === "ironhack") {
+//     event.preventDefault();
+//     alert("You cannot be Ironhack, because I am Ironhack.");
+//     return;
+//   }
+// });
 
 
 /* Links cambio de color */

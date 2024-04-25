@@ -37,8 +37,9 @@ header .nav-bar ul {
 header .nav-bar ul li a {
   color: var(--text-color);
 }
-header .nav-bar ul li .active {
+header .nav-bar .link-activated {
   color: var(--button-color);
+  font-weight: bold;
 }
 
 /* Homepage */
@@ -128,6 +129,11 @@ body .recent-projects .card-container .card {
   width: 340px;
   height: 444px;
   background-color: white;
+  transition: 0.5s;
+}
+body .recent-projects .card-container .card:hover {
+  transform: translateY(-30px);
+  cursor: pointer;
 }
 body .recent-projects .card-container .card img {
   height: 240px;
@@ -246,6 +252,10 @@ body .services-section .card-container .card {
   background-color: white;
   padding: 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+body .services-section .card-container .card:hover {
+  transform: translateY(-30px);
 }
 body .services-section .card-container .card .logo-container {
   background-color: #ecf7ff;
@@ -357,7 +367,6 @@ button a {
 
 a {
   text-decoration: none;
-  color: var(--text-color);
 }
 
 h3 {
