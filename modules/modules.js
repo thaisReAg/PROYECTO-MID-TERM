@@ -25,7 +25,7 @@ function loadCta() {
 function insertHTML() {
   let urlActual = window.location.href;
 
-  if (urlActual.includes("index")) {
+  if (urlActual.includes("index", "circle")) {
     document.querySelector("#home").classList.add("link-activated");
     console.log("index");
   }
