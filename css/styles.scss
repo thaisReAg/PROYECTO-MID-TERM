@@ -342,6 +342,7 @@ body {
           width: 100%;
           max-width: 198px;
           height: 80px;
+          cursor: pointer;
         }
       }
     }
@@ -396,6 +397,7 @@ button {
 }
 a {
   text-decoration: none;
+  color: var(--text-color);
 }
 h3 {
   color: var(--title-color);

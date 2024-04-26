@@ -329,6 +329,7 @@ body .cta-section .cta-container form button {
   width: 100%;
   max-width: 198px;
   height: 80px;
+  cursor: pointer;
 }
 body .fixed-btn {
   position: fixed;
@@ -380,6 +381,7 @@ button a {
 
 a {
   text-decoration: none;
+  color: var(--text-color);
 }
 
 h3 {
